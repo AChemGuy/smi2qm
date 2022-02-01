@@ -1,11 +1,7 @@
 import os
 import re
 
-#import Atomic Simulation Environment, XTB quantum chemistry software and Open Babel molecular tools
-import ase
-from ase import io
-from ase import Atoms
-from xtb.ase.calculator import XTB
+#import Open Babel molecular tools
 from openbabel import openbabel
 from openbabel import pybel
 
@@ -19,6 +15,14 @@ from pymongo import MongoClient
 client = MongoClient()
 db = client.db
 collection = db.coll
+collection_failed = db.coll_failed
+
+######
+class XTB():
+ 
+###### 
+
+
 
 #directory containing relevant smiles strings
 path = '/app/SMILES'
@@ -45,14 +49,14 @@ for file in os.listdir(path):
 #calc molecular fingerprint
    fp = str(mol.calcfp())
 
-# add data from current iteration of for loop to MongoDB collection
-   atoms = ase.io.read('geom.xyz',format='xyz')
-   atoms.charge = molcharge
-   atoms.calc = XTB(method="GFN2-xTB")
-   energy = atoms.get_potential_energy()
-
-   entry = {"calculator": "GFN2-xTB", "smiles": smi, "xyz": struc, "charge": molcharge, "energy": energy, "fingerprint" : fp}
-   collection.insert_one(entry)
+# execute quantum chemical calculation, add all data from current iteration of for loop to MongoDB collection, note any failed calculations in separate collection
+   try:
+    energy = atoms.get_potential_energy()
+    entry = {"calculator": "GFN2-xTB", "smiles": smi, "xyz": struc, "charge": molcharge, "energy": energy, "fingerprint" : fp}
+    collection.insert_one(entry)
+   except: 
+    entry_failed = {"calculator": "GFN2-xTB", "smiles": smi, "xyz": struc, "charge": molcharge, "fingerprint" : fp}
+    collection_failed.insert_one(entry_failed)
 
 
    os.remove("geom.xyz") 
