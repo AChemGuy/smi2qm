@@ -1,5 +1,6 @@
 import os
 import re
+import subprocess
 
 #import Open Babel molecular tools
 from openbabel import openbabel
@@ -20,6 +21,15 @@ collection_failed = db.coll_failed
 ######
 class XTB():
  
+  def __init__(self):
+      self = self
+
+ def execute(self):
+     command = 'xtb geom.xyz --opt normal >xtb.out'
+     subprocess.check_call(command, shell=True)
+
+ def read_results(self):
+
 ###### 
 
 
@@ -49,7 +59,7 @@ for file in os.listdir(path):
 #calc molecular fingerprint
    fp = str(mol.calcfp())
 
-# execute quantum chemical calculation, add all data from current iteration of for loop to MongoDB collection, note any failed calculations in separate collection
+# execute quantum chem calcs, add all data from loop iteration to MongoDB
    try:
     energy = atoms.get_potential_energy()
     entry = {"calculator": "GFN2-xTB", "smiles": smi, "xyz": struc, "charge": molcharge, "energy": energy, "fingerprint" : fp}
@@ -58,5 +68,7 @@ for file in os.listdir(path):
     entry_failed = {"calculator": "GFN2-xTB", "smiles": smi, "xyz": struc, "charge": molcharge, "fingerprint" : fp}
     collection_failed.insert_one(entry_failed)
 
-
-   os.remove("geom.xyz") 
+   files = [] 
+   for file in files:
+    if os.path.exists(file):
+     os.remove(file)
