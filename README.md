@@ -14,7 +14,7 @@ Requires:
 
    ```git clone https://github.com/asimnajibi/smi2qm```
 
-2. In smi2qm directory, build Docker image
+2. In smi2qm directory, build a Docker image
 
    ```docker build -t smi2qm:v1 .```
 
