@@ -1,6 +1,0 @@
-# Building and running an image does not require
-pyproject.toml
-tests
-.git
-.github
-README.md
