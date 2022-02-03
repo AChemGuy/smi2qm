@@ -1,6 +1,10 @@
 import os
 import re
 import subprocess
+import argparse
+parser = argparse.ArgumentParser(description='smi2qm limited example program')
+parser.add_argument('-v', '--version', action='version', version='smi2qm limited example program v0.0.1', help='version')
+args = parser.parse_args()
 
 #import Open Babel molecular tools
 from openbabel import openbabel
