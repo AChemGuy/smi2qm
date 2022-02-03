@@ -7,7 +7,7 @@ Requires:
 - MongoDB (https://docs.mongodb.com/manual/installation/)
 - MongoDB Compass (https://www.mongodb.com/try/download/compass) 
 
-## Usage
+## Command line usage
 1. clone git repository
 
 ```git clone https://github.com/asimnajibi/smi2qm```
