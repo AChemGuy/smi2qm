@@ -4,6 +4,9 @@ import subprocess
 import argparse
 parser = argparse.ArgumentParser(description='smi2qm limited example program')
 parser.add_argument('-v', '--version', action='version', version='smi2qm limited example program v0.0.1', help='version')
+parser.add_argument('-c', '--client', , help='MongoDB client, e.g 'mongodb://localhost:27017/' (leave blank for default local client)')
+parser.add_argument('-d', '--dbname', required=True, help='MongoDB database name')
+parser.add_argument('-n', '--collname', required=True, help='MongoDB collection name')
 args = parser.parse_args()
 
 #import Open Babel molecular tools
@@ -16,9 +19,9 @@ from tqdm import tqdm
 #import PyMongo, an interface to MongoDB
 import pymongo
 from pymongo import MongoClient
-#use local client, name database and collection
+#use client, name database and collection
 client = MongoClient()
-db = client.db
+db = client.smi2qm
 collection = db.coll
 collection_failed = db.coll_failed
 
@@ -63,8 +66,8 @@ for file in os.listdir(path):
    mol.OBMol.AddHydrogens()
    mol.make3D()
    mol.write("xyz", "geom.xyz")
-   with open('geom.xyz', 'r') as strucf:
-    struc = strucf.readlines()
+   with open('geom.xyz', 'r') as f:
+    struc = f.readlines()
 
 # smi->chrg
    molcharge = mol.OBMol.GetTotalCharge()
