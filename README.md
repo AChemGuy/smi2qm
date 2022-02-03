@@ -1,5 +1,6 @@
 # smi2qm
 Limited example program that obtains quantum chemical data for large batches of molecules
+
 Requires:
 - GitHub (https://desktop.github.com/)
 - Docker (https://www.docker.com/get-started)
