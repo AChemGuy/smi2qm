@@ -4,7 +4,7 @@ import subprocess
 import argparse
 parser = argparse.ArgumentParser(description='smi2qm limited example program')
 parser.add_argument('-v', '--version', action='version', version='smi2qm limited example program v0.0.1', help='version')
-parser.add_argument('-c', '--client', , help='MongoDB client, e.g 'mongodb://localhost:27017/' (leave blank for default local client)')
+parser.add_argument('-c', '--client', required=True, help='MongoDB client e.g mongodb://localhost:27017/')
 parser.add_argument('-d', '--dbname', required=True, help='MongoDB database name')
 parser.add_argument('-n', '--collname', required=True, help='MongoDB collection name')
 args = parser.parse_args()
@@ -19,11 +19,16 @@ from tqdm import tqdm
 #import PyMongo, an interface to MongoDB
 import pymongo
 from pymongo import MongoClient
+from pymongo.collection import Collection
 #use client, name database and collection
-client = MongoClient()
-db = client.smi2qm
-collection = db.coll
-collection_failed = db.coll_failed
+argcli = args.client
+argdb = args.dbname
+argcoll = args.collname
+argcollf = args.collname+'_failed'
+client = MongoClient(argcli)
+db = client[argdb]
+collection = db[argcoll]
+collection_failed = db[argcollf]
 
 #####################
 class XTB():
