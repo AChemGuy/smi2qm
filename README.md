@@ -1,10 +1,10 @@
 # smi2qm
 Limited example program that obtains quantum chemical data for large batches of molecules
 Requires:
-GitHub (https://desktop.github.com/)
-Docker (https://www.docker.com/get-started)
-MongoDB (https://docs.mongodb.com/manual/installation/)
-MongoDB Compass (https://www.mongodb.com/try/download/compass) 
+- GitHub (https://desktop.github.com/)
+- Docker (https://www.docker.com/get-started)
+- MongoDB (https://docs.mongodb.com/manual/installation/)
+- MongoDB Compass (https://www.mongodb.com/try/download/compass) 
 
 ## Usage
 1. clone git repository
