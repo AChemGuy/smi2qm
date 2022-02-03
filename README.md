@@ -10,7 +10,7 @@ Requires:
 - MongoDB Compass (https://www.mongodb.com/try/download/compass) 
 
 ## Command line usage
-1. clone git repository
+1. Clone git repository
 
    ```git clone https://github.com/asimnajibi/smi2qm```
 
@@ -18,8 +18,8 @@ Requires:
 
    ```docker build -t smi2qm:v1 .```
 
-3. run Docker image container, mounting local directory containing smiles files and specifying client, and database and collection names. For example,
+3. Run Docker image container, mounting local directory containing smiles files and specifying client, and database and collection names. For example,
 
    ```docker run -it -v $(pwd)/SMILES:/smi2qm/SMILES smi2qm:v1 -c mongodb://localhost:27017 -d db_smi2qm -n coll_smi2qm```
 
-4. check stored data on MongoDB Compass, view insights, manipulate, visualise, make queries
+4. Check stored data on MongoDB Compass, view insights, manipulate, visualise, make queries
