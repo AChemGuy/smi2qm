@@ -18,8 +18,8 @@ Requires:
 
    ```docker build -t smi2qm:v1 .```
 
-3. run Docker image container, mounting local directory containing smiles files
+3. run Docker image container, mounting local directory containing smiles files and specifying client, and database and collection names. For example,
 
-   ```docker run -it -v $(pwd)/SMILES:/smi2qm/SMILES smi2qm:v1```
+   ```docker run -it -v $(pwd)/SMILES:/smi2qm/SMILES smi2qm:v1 -c mongodb://localhost:27017 -d db_smi2qm -n coll_smi2qm```
 
 4. check stored data on MongoDB Compass, view insights, manipulate, visualise, make queries
