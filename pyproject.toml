@@ -1,1 +1,18 @@
+[tool.poetry]
+name = "smi2qm"
+version = "0.0.1"
+description = ""
+authors = ["Asim Najibi asim.najibi@gmail.com"]
 
+[tool.poetry.dependencies]
+python = "^3.8"
+panda = "^0.3.1"
+flask = "2.0.1" 
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+black = "^19.3b0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
