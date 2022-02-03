@@ -4,9 +4,9 @@ RUN apt update -y  && apt install -y build-essential && apt-get install -y  buil
 RUN apt-get install -y vim
 
 # work directory
-RUN mkdir /app
-WORKDIR /app
-ADD . /app/
+RUN mkdir /smi2qm
+WORKDIR /smi2qm
+ADD . /smi2qm/
 
 # install XTB
 RUN wget https://github.com/grimme-lab/xtb/releases/tag/v6.4.1/xtb-6.4.1-linux-x86_64.tar.xz
@@ -18,5 +18,5 @@ RUN rm -f xtb-6.4.1-linux-x86_64.tar.xz
 RUN conda env create -f environment.yaml
 
 # run image
-ENTRYPOINT ["conda", "run", "-n", "smi2qm", "python", "/app/smi2qm/main.py"]
+ENTRYPOINT ["conda", "run", "-n", "smi2qm", "python", "/smi2qm/smi2qm/main.py"]
 
