@@ -2,7 +2,7 @@
 name = "smi2qm"
 version = "0.0.1"
 description = ""
-authors = ["Asim Najibi asim.najibi@gmail.com"]
+authors = ["Asim Najibi asimnajibi@github.com"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
