@@ -22,4 +22,4 @@ Requires:
 
    ```docker run -it -v $(pwd)/SMILES:/smi2qm/SMILES smi2qm:v1```
 
-4. check stored data on MongoDB Compass, view insights, manipulate, visualise
+4. check stored data on MongoDB Compass, view insights, manipulate, visualise, make queries
