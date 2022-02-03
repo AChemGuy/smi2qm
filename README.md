@@ -1,4 +1,5 @@
 # smi2qm
+[![CI Pipeline](https://github.com/asimnajibi/smi2qm/actions/workflows/ci.yaml/badge.svg)](https://github.com/asimnajibi/smi2qm/actions/workflows/ci.yaml)
 Limited example program that obtains quantum chemical data for large batches of molecules
 
 Requires:
