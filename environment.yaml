@@ -1,0 +1,12 @@
+name: smi2qm
+channels:
+  - anaconda
+  - conda-forge
+dependencies:
+  - python=3.8
+  - pip:
+    - flask==1.0.2
+    - tornado==5.1.1
+    - requests==2.26.0
+  - pymongo==3.12.0
+  - openbabel==3.1.1
