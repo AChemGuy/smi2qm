@@ -22,7 +22,7 @@ db = client.db
 collection = db.coll
 collection_failed = db.coll_failed
 
-######
+#####################
 class XTB():
  
   def __init__(self):
@@ -32,9 +32,18 @@ class XTB():
      command = 'xtb geom.xyz --opt normal >xtb.out'
      subprocess.check_call(command, shell=True)
 
- def read_results(self):
+ def get_energy(self):
+     with open('xtb.out, 'r') as fd:
+      for line in fd.readlines():
+       if 'TOTAL ENERGY' in line:
+        energy = line.split()[4]
+     return energy
+               
+ def get_optimised_geometry(self):
+     with open('xtbopt.xyz', 'r') as fd:
+      struc = fd.read()          
 
-###### 
+##################### 
 
 
 
@@ -72,7 +81,7 @@ for file in os.listdir(path):
     entry_failed = {"calculator": "GFN2-xTB", "smiles": smi, "xyz": struc, "charge": molcharge, "fingerprint" : fp}
     collection_failed.insert_one(entry_failed)
 
-   files = [] 
+   files = ['charges', 'wbo', 'xtbopt.log', 'xtbrestart', 'xtb.out', 'xtbopt.xyz',	'xtbtopo.mol', '.xtboptok', '.NOT_CONVERGED', '.CHRG'] 
    for file in files:
     if os.path.exists(file):
      os.remove(file)
