@@ -6,7 +6,7 @@ Docker (https://www.docker.com/get-started)
 MongoDB (https://docs.mongodb.com/manual/installation/)
 MongoDB Compass (https://www.mongodb.com/try/download/compass) 
 
-## usage
+## Usage
 1. clone git repository
 ```git clone https://github.com/asimnajibi/smi2qm```
 2. In smi2qm directory, build Docker image
