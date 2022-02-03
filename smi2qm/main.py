@@ -48,7 +48,7 @@ class XTB():
 
 
 #directory containing relevant smiles strings
-path = '/app/SMILES'
+path = '/smi2qm/SMILES'
 os.chdir(path)
 
 for file in os.listdir(path):
@@ -73,8 +73,11 @@ for file in os.listdir(path):
    fp = str(mol.calcfp())
 
 # execute quantum chem calcs, add all data from loop iteration to MongoDB
+   xtb = XTB()
    try:
-    energy = atoms.get_potential_energy()
+    xtb.execute()
+    xtb.get_energy()
+    xtb.get_optimised_geometry()           
     entry = {"calculator": "GFN2-xTB", "smiles": smi, "xyz": struc, "charge": molcharge, "energy": energy, "fingerprint" : fp}
     collection.insert_one(entry)
    except: 
