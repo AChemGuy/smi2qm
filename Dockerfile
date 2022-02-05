@@ -1,7 +1,7 @@
 # base image
 FROM conda/miniconda3
 RUN apt update -y  && apt install -y build-essential && apt-get install -y  build-essential
-RUN apt-get install -y vim
+RUN apt-get install -y vim && apt-get install -y wget
 
 # work directory
 RUN mkdir /smi2qm
