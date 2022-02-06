@@ -14,7 +14,7 @@ Requires:
 
    ```git clone https://github.com/asimnajibi/smi2qm```
 
-2. In smi2qm directory, build a Docker image (1.5 GB, XTB program in Docker build requires Linux X86 64 bit archiitecture)
+2. In smi2qm directory, build a Docker image (1.5 GB, XTB program in Docker build requires Linux x86 64 bit architecture)
 
    ```docker build -t smi2qm:v1 .```
 
