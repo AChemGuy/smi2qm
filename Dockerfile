@@ -12,7 +12,6 @@ ADD . /smi2qm/
 RUN wget https://github.com/grimme-lab/xtb/releases/tag/v6.4.1/xtb-6.4.1-linux-x86_64.tar.xz
 RUN tar xfv xtb-6.4.1-linux-x86_64.tar.xz
 RUN rm -f xtb-6.4.1-linux-x86_64.tar.xz
-RUN alias xtb='/smi2qm/xtb-6.4.1/bin/xtb'
 
 # create Conda environment from yaml file listing all relevant packages:
 RUN conda env create -f environment.yaml
