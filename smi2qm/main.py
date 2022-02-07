@@ -72,7 +72,7 @@ for file in os.listdir(path):
    mol.make3D()
    mol.write("xyz", "geom.xyz")
    with open('geom.xyz', 'r') as f:
-    struc = f.readlines()
+    struc = f.read()
 
 # smi->chrg
    molcharge = mol.OBMol.GetTotalCharge()
@@ -92,7 +92,7 @@ for file in os.listdir(path):
     entry_failed = {"calculator": "GFN2-xTB", "smiles": smi, "xyz": struc, "charge": molcharge, "fingerprint" : fp}
     collection_failed.insert_one(entry_failed)
 
-   files = ['charges', 'wbo', 'xtbopt.log', 'xtbrestart', 'xtb.out', 'xtbopt.xyz', 'xtbtopo.mol', '.xtboptok', '.NOT_CONVERGED', '.CHRG'] 
+   files = ['geom.xyz', 'charges', 'wbo', 'xtbopt.log', 'xtbrestart', 'xtb.out', 'xtbopt.xyz', 'xtbtopo.mol', '.xtboptok', '.NOT_CONVERGED', '.CHRG'] 
    for file in files:
     if os.path.exists(file):
      os.remove(file)
