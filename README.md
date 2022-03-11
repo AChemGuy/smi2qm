@@ -20,6 +20,6 @@ Requires:
 
 3. Run Docker image container, mounting local directory containing smiles files and specifying the client, database name and collection name. For example,
 
-   ```docker run -it -v $(pwd)/SMILES:/smi2qm/SMILES smi2qm:v1 -c mongodb://localhost:27017 -d db_smi2qm -n coll_smi2qm```
+   ```docker run -it -v $(pwd)/SMILES:/smi2qm/SMILES smi2qm:v1 -c mongodb://localhost -d db_smi2qm -n coll_smi2qm```
 
 4. Check stored data on MongoDB Compass, view insights, manipulate, visualise, make queries
