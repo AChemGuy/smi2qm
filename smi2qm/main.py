@@ -48,8 +48,8 @@ class XTB():
      return energy
                
  def get_optimised_geometry(self):
-     optstruc = np.genfromtxt('geom.xyz', skip_header=2, usecols=(1,2,3))          
-  
+     with open('xtbopt.xyz', 'r+') as fd:
+      optstruc = fd.readlines()[1:]
 ##################### 
 
 
@@ -72,8 +72,7 @@ for file in os.listdir(path):
    mol.write("xyz", "geom.xyz")
    with open('geom.xyz', 'r') as f:
     natoms = f.readline()            
-   atoms = np.genfromtxt('geom.xyz', dtype=str, skip_header=2, usecols=0)
-   struc = np.genfromtxt('geom.xyz', skip_header=2, usecols=(1,2,3))            
+    struc = f.readlines()[1:]       
 
 # smi->chrg
    molcharge = mol.OBMol.GetTotalCharge()
