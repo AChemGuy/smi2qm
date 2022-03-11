@@ -4,7 +4,7 @@ import numpy as np
 import argparse
 parser = argparse.ArgumentParser(description='smi2qm limited example program')
 parser.add_argument('-v', '--version', action='version', version='smi2qm limited example program v0.0.1', help='version')
-parser.add_argument('-c', '--client', required=True, help='MongoDB client e.g mongodb://localhost:27017')
+parser.add_argument('-c', '--client', required=True, help='MongoDB client e.g mongodb://localhost')
 parser.add_argument('-d', '--dbname', required=True, help='MongoDB database name')
 parser.add_argument('-n', '--collname', required=True, help='MongoDB collection name')
 args = parser.parse_args()
