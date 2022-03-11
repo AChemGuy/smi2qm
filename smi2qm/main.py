@@ -1,6 +1,6 @@
 import os
-import re
 import subprocess
+import numpy as np
 import argparse
 parser = argparse.ArgumentParser(description='smi2qm limited example program')
 parser.add_argument('-v', '--version', action='version', version='smi2qm limited example program v0.0.1', help='version')
@@ -48,9 +48,8 @@ class XTB():
      return energy
                
  def get_optimised_geometry(self):
-     with open('xtbopt.xyz', 'r') as fd:
-      struc = fd.read()          
-
+     optstruc = np.genfromtxt('geom.xyz', skip_header=2, usecols=(1,2,3))          
+  
 ##################### 
 
 
@@ -72,12 +71,14 @@ for file in os.listdir(path):
    mol.make3D()
    mol.write("xyz", "geom.xyz")
    with open('geom.xyz', 'r') as f:
-    struc = f.read()
+    natoms = f.readline()            
+   atoms = np.genfromtxt('geom.xyz', dtype=str, skip_header=2, usecols=0)
+   struc = np.genfromtxt('geom.xyz', skip_header=2, usecols=(1,2,3))            
 
 # smi->chrg
    molcharge = mol.OBMol.GetTotalCharge()
 
-#calc molecular fingerprint
+#calc molecular 2D fingerprint
    fp = str(mol.calcfp())
 
 # execute quantum chem calcs, add all data from loop iteration to MongoDB
@@ -86,10 +87,10 @@ for file in os.listdir(path):
     xtb.execute()
     xtb.get_energy()
     xtb.get_optimised_geometry()           
-    entry = {"calculator": "GFN2-xTB", "smiles": smi, "xyz": struc, "charge": molcharge, "energy": energy, "fingerprint" : fp}
+    entry = {"calculator": "GFN2-xTB", "smiles": smi, "no. of atoms": natoms, "atoms": atoms, "xyz": optstruc, "charge": molcharge, "energy": energy, "fingerprint" : fp}
     collection.insert_one(entry)
    except: 
-    entry_failed = {"calculator": "GFN2-xTB", "smiles": smi, "xyz": struc, "charge": molcharge, "fingerprint" : fp}
+    entry_failed = {"calculator": "GFN2-xTB", "smiles": smi, "no. of atoms": natoms, "atoms": atoms, "pre-opt xyz": struc, "charge": molcharge, "fingerprint" : fp}
     collection_failed.insert_one(entry_failed)
 
    files = ['geom.xyz', 'charges', 'wbo', 'xtbopt.log', 'xtbrestart', 'xtb.out', 'xtbopt.xyz', 'xtbtopo.mol', '.xtboptok', '.NOT_CONVERGED', '.CHRG'] 
