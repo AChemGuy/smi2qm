@@ -23,3 +23,6 @@ Requires:
    ```docker run -it -v $(pwd)/SMILES:/smi2qm/SMILES smi2qm:v1 -c mongodb://localhost -d db_smi2qm -n coll_smi2qm```
 
 4. Check stored data on MongoDB Compass, view insights, manipulate, visualise, make queries
+
+## In progress: statistics with numpy
+See smi2qm/stats.py
