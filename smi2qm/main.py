@@ -76,6 +76,7 @@ for file in os.listdir(path):
 
 # smi->chrg
    molcharge = mol.OBMol.GetTotalCharge()
+#add method to evaluate spin multiplicity               
 
 #calc molecular 2D fingerprint
    fp = str(mol.calcfp())
