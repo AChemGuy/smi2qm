@@ -25,4 +25,5 @@ os.remove('optstruc.xyz')
 
 #min and max no. of atoms, av.
 natomsdoc = collection.find({}, {"no. of atoms": 1, "_id" : 0})
+#use distinct to get list of values only
 
