@@ -26,4 +26,5 @@ Requires:
 
 ## In progress: statistics with numpy
 See smi2qm/npstats.py
+
 Use ```--entrypoint ["conda", "run", "-n", "smi2qm", "python", "/smi2qm/smi2qm/npstats.py"]``` in ```docker run```
