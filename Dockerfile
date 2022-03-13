@@ -17,6 +17,3 @@ ENV PATH=/smi2qm/xtb-6.4.1/bin:${PATH}
 # create Conda environment from yaml file listing all relevant packages:
 RUN conda env create -f environment.yaml
 
-# run image
-ENTRYPOINT ["conda", "run", "-n", "smi2qm", "python", "/smi2qm/smi2qm/main.py"]
-
