@@ -7,7 +7,6 @@ Requires:
 - Git (https://desktop.github.com/)
 - Docker (https://www.docker.com/get-started)
 - MongoDB (https://docs.mongodb.com/manual/installation/)
-- MongoDB Compass (https://www.mongodb.com/try/download/compass) 
 
 ## Command line usage
 1. Clone git repository
@@ -28,3 +27,5 @@ Requires:
 See smi2qm/npstats.py
 
 Use ```--entrypoint ["conda", "run", "-n", "smi2qm", "python", "/smi2qm/smi2qm/npstats.py"]``` in ```docker run```
+
+To obtain a numpy array of atoms and corresponding atomic coordinates, add option ```-s <'string'>``` or ```--smiles <'string'>```
