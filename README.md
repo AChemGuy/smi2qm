@@ -24,7 +24,7 @@ Requires:
 
 4. Check stored data on MongoDB Compass, view insights, manipulate, visualise, make queries
 
-## In progress: statistics with numpy
+## In progress: statistics of MongoDB data with numpy
 See smi2qm/npstats.py
 
 Use ```--entrypoint ["conda", "run", "-n", "smi2qm", "python", "/smi2qm/smi2qm/npstats.py"]``` in ```docker run```
