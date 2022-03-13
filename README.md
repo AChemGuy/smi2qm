@@ -28,4 +28,4 @@ See smi2qm/npstats.py
 
 Use ```--entrypoint ["conda", "run", "-n", "smi2qm", "python", "/smi2qm/smi2qm/npstats.py"]``` in ```docker run```
 
-To obtain a numpy array of atoms and corresponding atomic coordinates, add option ```-s <'string'>``` or ```--smiles <'string'>```
+To obtain a numpy array of atoms and corresponding atomic coordinates for a particular molecule, add option ```-s <'string'>``` or ```--smiles <'string'>```
