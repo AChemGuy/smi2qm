@@ -2,6 +2,7 @@
 FROM conda/miniconda3
 RUN apt update -y  && apt install -y build-essential && apt-get install -y  build-essential
 RUN apt-get install -y vim && apt-get install -y wget
+RUN apt install -y xzutils
 
 # work directory
 RUN mkdir /smi2qm
