@@ -1,7 +1,7 @@
 # smi2qm
 [![CI Pipeline](https://github.com/asimnajibi/smi2qm/actions/workflows/ci.yaml/badge.svg)](https://github.com/asimnajibi/smi2qm/actions/workflows/ci.yaml) [![Docker Container Push Pipeline](https://github.com/asimnajibi/smi2qm/actions/workflows/dockerpush.yaml/badge.svg)](https://github.com/asimnajibi/smi2qm/actions/workflows/dockerpush.yaml)
 
-Limited example program that obtains quantum chemical data for large batches of molecules, from SMILES strings
+Limited example program that obtains quantum chemical data for large batches of molecules, from SMILES strings.
 
 Requires:
 - Docker (https://www.docker.com/get-started)
