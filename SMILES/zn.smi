@@ -1,3 +1,4 @@
+# a handful of molecules from the ZINC20 database (https://zinc20.docking.org/)
 CCN(CC)C(=O)COc1ccc(cc1OC)CC=C
 C[C@@]1(C(=O)C=C(O1)C(=O)[O-])c2ccccc2
 c1ccc(cc1)C(c2ccccc2)[S@](=O)CC(=O)NO
