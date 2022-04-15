@@ -11,7 +11,7 @@ Requires:
 
 1. Pull Docker image from Docker Hub:
 
-```docker pull asimnajibi/smi2qm```
+   ```docker pull asimnajibi/smi2qm```
 
 2. Run Docker image container, mounting local directory containing smiles files and specifying the client, database name and collection name. For example,
 
