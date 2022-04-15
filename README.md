@@ -9,11 +9,15 @@ Requires:
 
 ## Command line usage
 
-1. Run Docker image container, mounting local directory containing smiles files and specifying the client, database name and collection name. For example,
+1. Pull Docker image from Docker Hub:
+
+```docker pull asimnajibi/smi2qm```
+
+2. Run Docker image container, mounting local directory containing smiles files and specifying the client, database name and collection name. For example,
 
    ```docker run -it -v $(pwd)/SMILES:/smi2qm/SMILES --entrypoint ["conda", "run", "-n", "smi2qm", "python", "/smi2qm/smi2qm/main.py"] smi2qm:latest -c mongodb://localhost -d db_smi2qm -n coll_smi2qm```
 
-2. Check stored data on MongoDB, view insights, manipulate, visualise, make queries
+3. Check stored data on MongoDB, view insights, manipulate, visualise, make queries
 
 ## In progress: statistics of MongoDB data with numpy
 See smi2qm/npstats.py
