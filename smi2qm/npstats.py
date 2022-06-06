@@ -41,9 +41,12 @@ npnatoms = np.array(natomslist)
 smallest = npatoms.min()
 largest = npatoms.max()
 avsize = npatoms.mean()
+stdsize = npatoms.std()  
 print("smallest molecule: "+smallest+" atoms")
 print("largest molecule: "+largest+" atoms")
 print("average size of molecule: "+avsize+" atoms")
+print("standard deviation of size of molecules: "+stdsize+" atoms")      
+      
  
 #more useful measures to be added
 
