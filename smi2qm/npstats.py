@@ -27,7 +27,7 @@ collection = db[argcoll]
 collection_failed = db[argcollf]
 
 #for individual molecules, atoms and coords have corresponding numpy array rows
-moldoc = collection.find_one({'smi': }, {"opt xyz" : 1, "_id" : 0})
+moldoc = collection.find_one({'smi': argsmi}, {"opt xyz" : 1, "_id" : 0})
 with open('optstruc.xyz', 'w') as w:
  w.write(moldoc["opt xyz"])
 npatoms = np.genfromtxt('optstruc.xyz', dtype=str, usecols=0)
