@@ -6,6 +6,7 @@ import numpy as np
 import os
 from pymongo.cursor import Cursor
 from pymongo.collection import Collection
+import argparse
 
 parser = argparse.ArgumentParser(description='smi2qm limited example program numpy statistics tools')
 parser.add_argument('-v', '--version', action='version', version='smi2qm limited example program v0.0.1 - statistics tools', help='version')
