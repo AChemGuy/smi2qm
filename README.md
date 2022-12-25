@@ -3,10 +3,10 @@
 
 Limited example program that generates quantum chemical data for large batches of molecules, from SMILES strings.
 
-# Development goals
+## Development goals
 Pipeline that allows high-throughput calculation of drug-protein interaction free energies in solution, with only input being SMILES strings of drug-candidate molecules and a protein structure, efficiently stores data, and allows for analysis of data.
 
-Requires:
+## Requires:
 - Docker (https://www.docker.com/get-started)
 - MongoDB (https://docs.mongodb.com/manual/installation/)
 
@@ -25,7 +25,7 @@ Requires:
 ## In progress: statistics of MongoDB data with numpy
 See smi2qm/npstats.py
 
-# This program will be used to analyse drug-protein interaction free energies in the generated database as well as statistical measurements.
+#### This program will be used to analyse drug-protein interaction free energies in the generated database as well as statistical measurements.
 
 Use ```--entrypoint ["conda", "run", "-n", "smi2qm", "python", "/smi2qm/smi2qm/npstats.py"]``` in ```docker run```
 
