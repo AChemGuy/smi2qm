@@ -75,8 +75,7 @@ for file in os.listdir(path):
     preoptstruc = f.readlines()[1:]       
 
 # smi->chrg
-   molcharge = mol.OBMol.GetTotalCharge()
-#add method to evaluate spin multiplicity               
+   molcharge = mol.OBMol.GetTotalCharge()              
 
 #calc molecular 2D fingerprint
    fp = str(mol.calcfp())
