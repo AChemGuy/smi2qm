@@ -19,7 +19,7 @@ Limited example program that generates quantum chemically determined molecular g
 
 3. Check stored data on MongoDB, view insights, manipulate, visualise, make queries
 
-## To be expanded: Statistics of MongoDB data with numpy
+## To be expanded: Statistics of MongoDB data with NumPy
 See smi2qm/npstats.py
 
 Use ```--entrypoint ["conda", "run", "-n", "smi2qm", "python", "/smi2qm/smi2qm/npstats.py"]``` in ```docker run```
