@@ -39,4 +39,4 @@ The absence of the following two aspects may lead to inaccuracies in rare cases,
 1. XTB calculation of Hessian matrix of optimised molecular geometry and subsequent detection of imaginary frequencies leading to dump in failed-calculations MongoDB collection. Add reason of failure to the entry inserted into the failed-calculations MongoDB collection.
 2. Determination of number of unpaired electrons: Would be useful for XTB calculation but cannot always be determined from SMILES string (e.g due to various possible configurations of d-orbital electrons in transition metals due to ligands).
 
-***EDITING DOCUMENTATION***
+***EDITING DOCUMENTATION - adding to list***
