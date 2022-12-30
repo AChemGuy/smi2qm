@@ -7,7 +7,7 @@ Limited example program that generates quantum chemically determined molecular g
 - Uses Python client of Open Babel to evaluate molecular charges and generate preliminary molecular geometries; see https://open-babel.readthedocs.io/en/latest/UseTheLibrary/PythonDoc.html).
 - Uses Python client of the XTB program for tight-binding density functional theory (quantum chemistry approach) calculations.
 
-***EDITING DOCUMENTATION***
+***EDITING DOCUMENTATION - adding info***
 
 ## Requires:
 - Docker (https://www.docker.com/get-started)
