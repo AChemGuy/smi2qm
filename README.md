@@ -3,6 +3,11 @@
 
 Limited example program that generates quantum chemically determined molecular geometries for large batches of molecules from SMILES strings, using tight-binding density functional theory methods. This can be used for ligand-based cheminformatics screening of drug-candidate molecules.
 
+- Input is a single text file with individual SMILES strings in each line (e.g from ZINC database https://zinc20.docking.org/).
+- Uses Python client of Open Babel to evaluate molecular charges and generate preliminary molecular geometries; see https://open-babel.readthedocs.io/en/latest/UseTheLibrary/PythonDoc.html).
+- Uses Python client of the XTB program for tight-binding density functional theory (quantum chemistry approach) calculations.
+***EDITING DOCUMENTATION***
+
 ## Requires:
 - Docker (https://www.docker.com/get-started)
 - MongoDB (https://docs.mongodb.com/manual/installation/)
@@ -32,3 +37,4 @@ To obtain a numpy array of atoms and corresponding atomic coordinates for a part
 The absence of the following two aspects may lead to inaccuracies in rare cases, but cheminformatics-based drug screening can provide useful verification.
 1. XTB calculation of Hessian matrix of optimised molecular geometry and subsequent detection of imaginary frequencies leading to dump in failed-calculations MongoDB collection. Add reason of failure to the entry inserted into the failed-calculations MongoDB collection.
 2. Determination of number of unpaired electrons: Would be useful for XTB calculation but cannot always be determined from SMILES string (e.g due to various possible configurations of d-orbital electrons in transition metals due to ligands).
+***EDITING DOCUMENTATION***
