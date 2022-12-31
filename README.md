@@ -3,9 +3,9 @@
 
 Docker image of limited example Python program that generates quantum chemically determined molecular geometries for large batches of molecules from SMILES strings, using tight-binding density functional theory methods. This can be used for ligand-based cheminformatics screening of drug-candidate molecules.
 
-- The Docker image builds a Conda environment to manage all Python modules.
+The Docker image builds a Conda environment to manage all Python modules.
 
-
+Information for users:
 - Input is a single text file with individual SMILES strings in each line (e.g from ZINC database https://zinc20.docking.org/).
 - Uses Python client of Open Babel to evaluate molecular charges, generate preliminary molecular geometries, and generate molecular fingerprints; see https://open-babel.readthedocs.io/en/latest/UseTheLibrary/PythonDoc.html).
 - Uses Python client of the XTB program for tight-binding density functional theory (quantum chemistry approach) calculations; see https://github.com/grimme-lab/xtb-python.
