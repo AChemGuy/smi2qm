@@ -1,5 +1,5 @@
 # smi2qm
-[![CI Pipeline](https://github.com/asimnajibi/smi2qm/actions/workflows/ci.yaml/badge.svg)](https://github.com/asimnajibi/smi2qm/actions/workflows/ci.yaml) [![Docker Container Push Pipeline](https://github.com/asimnajibi/smi2qm/actions/workflows/dockerpush.yaml/badge.svg)](https://github.com/asimnajibi/smi2qm/actions/workflows/dockerpush.yaml) [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+[![CI Pipeline](https://github.com/asimnajibi/smi2qm/actions/workflows/ci.yaml/badge.svg)](https://github.com/asimnajibi/smi2qm/actions/workflows/ci.yaml) [![Docker Container Push Pipeline](https://github.com/asimnajibi/smi2qm/actions/workflows/dockerpush.yaml/badge.svg)](https://github.com/asimnajibi/smi2qm/actions/workflows/dockerpush.yaml)
 
 Docker image of limited example Python program that generates quantum chemically determined molecular geometries for large batches of molecules from SMILES strings, using tight-binding density functional theory methods. This can be used for ligand-based cheminformatics screening of drug-candidate molecules.
 
