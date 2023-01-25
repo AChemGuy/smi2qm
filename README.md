@@ -21,7 +21,7 @@ Information for users:
 
    ```docker pull asimnajibi/smi2qm```
 
-2. Run Docker image container, mounting local directory containing smiles files and specifying the client, database name and collection name. For example,
+2. Run Docker image container, mounting local directory containing smiles files (e.g see SMILES/examples.smi) and specifying the client, database name and collection name. For example,
 
    ```docker run -it -v $(pwd)/SMILES:/smi2qm/SMILES --entrypoint ["conda", "run", "-n", "smi2qm", "python", "/smi2qm/smi2qm/main.py"] smi2qm:latest -c mongodb://localhost -d db_smi2qm -n coll_smi2qm```
 
